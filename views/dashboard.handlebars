@@ -1,14 +1,14 @@
 
 {{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
+<div class="flex flex-row border-4 rounded-2xl bg-gray-600">
+<h2 class="font-bold">Your Posts</h2>
     {{#each posts as |post|}}
       {{> dashboard-postinfo post}}
     {{/each}}
 
-</section>
+</div>
 {{/if}}
 
-<button type="submit" class="btn"><a class="link" href="/dashboard/new">+ New Post</a></button>
+<button type="submit" class="btn border-2 text-gray-200 bg-blue-900 px-2 py-1 rounded-lg"><a class="link border-2 text-gray-200 bg-blue-900 px-2 py-1 rounded-lg" href="/dashboard/new">+ New Post</a></button>
 
 <script src="/js/add-post.js"></script>

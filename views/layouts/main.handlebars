@@ -8,32 +8,33 @@
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-  <div class="wrapper">
-      <header class="hero">
-          <div>
-            <nav class"nav">
-                    <a class="link" href="/">Home</a>
-                    <a class="link" href="/dashboard">Dashboard</a>
-                    {{#if loggedIn}}
-                    <a class="link" href="/" id="logout">Logout</a>
-                    {{else}}
-                    <a class="link" href="/login">Login</a>
-                    {{/if}}
-                </nav>          
-          </div>
+<body class="flex flex-col justify-center items-center w-full">
+  <header class="flex flex-col justify-center items-center gap-4 pt-4 pb-4 bg-blue-900 w-full">
+    <h1 class="self-center text-bold text-2xl">Mike's Tech Blog <span role="img" aria-label="laptop">💻</span></h1>
+    <nav class"flex flex-row justify-between w-full">
+      <div class="flex gap-4">
+        <a class="underline text-gray-200" href="/">Home</a>
+        <a class="underline text-gray-200" href="/dashboard">Dashboard</a>
 
-          <h1 class="app-title"><i class="fab "></i>The Tech Blog</h1>
-      </header>
+        <!-- Conditionally render login or logout links -->
+        {{#if loggedIn}}
+        <a class="underline text-gray-200" href="/" id="logout">Logout</a>
+        {{else}}
+        <a class="underline text-gray-200" href="/signup">Signup</a>
+        <a class="underline text-gray-200" href="/login">Login</a>
+        {{/if}}
+      </div>
+    </nav>          
+  </header>
 
-    <main>
-      {{{ body }}}
-    </main>
-  </div>
+  <main class="flex flex-col justify-center items-center w-4/5 mt-2 >
+    {{{ body }}}
+  </main>
 
-    {{#if loggedIn}}
-    <script src="/js/logout.js"></script>
-    {{/if}}
+
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 
 </body>
 
